@@ -212,12 +212,13 @@ else
     bbh=bs/2+bbm-1;
 end
 
-Iz=zeros(as,bs,a,b,c);
+% Iz=zeros(as,bs,a,b,c);
+B=zeros(ab,bb,a,b,c);
 for ii=1:a
     for jj=1:b
         for kk=1:c
-            B=blockproc(U0(:,:,ii,jj,kk),[bsn bsn],fun);
-            Iz(abl:abh,bbl:bbh,ii,jj,kk)=B;
+            B(:,:,ii,jj,kk)=blockproc(U0(:,:,ii,jj,kk),[bsn bsn],fun);
+            %Iz(abl:abh,bbl:bbh,ii,jj,kk)=B;
         end
     end
 end
